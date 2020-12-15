@@ -1,5 +1,5 @@
 const { Schema, model} = require('mongoose')
-const {insert, find} = require('./Database')
+const {insertData, findData} = require('./Database')
 
 const userSchema = new Schema({
     username: {
@@ -19,7 +19,7 @@ module.exports = {
         let {username, password} = data
         let dataModel = new User({username, password})
         try {
-            let result = await insert(dataModel)
+            let result = await insertData(dataModel)
 			return result
 		} 
 		catch (error) {
@@ -28,7 +28,7 @@ module.exports = {
     },
     findUser: async(data) => {
         try {
-            let result = await find(User, data);
+            let result = await findData(User, data);
 			return result;
         } 
         catch (error) {
