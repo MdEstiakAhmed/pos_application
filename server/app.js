@@ -3,6 +3,7 @@ const express = require('express')
 const chalk = require('chalk')
 const {connectDatabase} = require('./models/Database')
 const setRoute = require('./routes/setRoute')
+const setMiddleware = require('./middleware/setMiddleware')
 // module import
 
 // create app
@@ -12,6 +13,10 @@ const app = express()
 // config
 require('dotenv').config();
 // config
+
+// middleware setup
+setMiddleware(app)
+// middleware setup
 
 // route setup
 setRoute(app)
