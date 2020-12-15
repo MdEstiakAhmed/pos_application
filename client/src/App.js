@@ -1,43 +1,20 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import React, { createContext, useReducer} from 'react';
+import {BrowserRouter as Router} from "react-router-dom";
+import {initialState, reducer} from './reducers/UserReducer';
+import Routing from './route/Routing';
 import './App.css';
-import Dashboard from './components/dashboard/Dashboard';
-import Home from './components/home/Home';
-import AddProduct from './components/addProduct/AddProduct'
-import ViewProduct from "./components/viewProduct/ViewProduct";
-import Sales from "./components/sales/Sales";
-import SalesRecord from "./components/salesRecord/SalesRecord";
-import Login from "./components/login/Login";
+
+export const UserContext = createContext();
 
 function App() {
+  const [state, dispatch] = useReducer(reducer,initialState);
   return (
     <>
-      <Router>
-        <Switch>
-        <Route exact path="/login">
-            <Login/>
-          </Route>
-          <Route exact path="/addProduct">
-            <Dashboard children={<AddProduct/>}/>
-          </Route>
-          <Route exact path="/viewProduct">
-            <Dashboard children={<ViewProduct/>}/>
-          </Route>
-          <Route exact path="/sale">
-            <Dashboard children={<Sales/>}/>
-          </Route>
-          <Route exact path="/saleRecord">
-            <Dashboard children={<SalesRecord/>}/>
-          </Route>
-          <Route exact path="/">
-            <Dashboard children={<Home/>}/>
-          </Route>
-        </Switch>
-      </Router>
+      <UserContext.Provider value={{state, dispatch}}>
+        <Router>
+          <Routing/>
+        </Router>
+      </UserContext.Provider>
     </>
   );
 }

@@ -17,7 +17,7 @@ module.exports = {
     },
     find: async(model, data) => {
         try {
-            let result = await model.findOne(data.find).populate(data.populateColumn, data.displayColumn)
+            let result = await model.findOne(data.find, data.makeFalse).populate(data.populateColumn, data.displayColumn)
             if(result){
                 return {'status': true, 'data': result, 'message': 'user found successfully'};
             }

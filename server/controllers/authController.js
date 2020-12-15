@@ -29,6 +29,9 @@ module.exports = {
         let { username, password } = req.body
         let data = {
             find: {username},
+            makeFalse: {},
+            populateColumn: '',
+            displayColumn: ''
         }
         try {
             let result = await findUser(data)
