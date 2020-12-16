@@ -24,7 +24,6 @@ const UpdateProduct = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             if(data.status){
                 setFormValue(data.data);
             }
@@ -38,6 +37,7 @@ const UpdateProduct = () => {
     }, [])
     
     const onSubmit = data => {
+        
         setAlert({success: false, error: false, message: ''});
         setLoader(true);
         fetch(`http://localhost:5000/product/${id}`, {

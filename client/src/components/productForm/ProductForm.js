@@ -33,7 +33,7 @@ const ProductForm = (props) => {
 
                 <div className="form-group">
                     <label htmlFor="quantity">quantity</label>
-                    <input type="number" className="form-control" name="quantity" id="quantity" ref={register({ required: true, pattern: /^\d*[1-9]\d*$/ })} defaultValue={quantity && quantity} placeholder="quantity" />
+                    <input type="number" className="form-control" name="quantity" id="quantity" ref={register({ required: true, pattern: /^\d*[0-9]\d*$/ })} defaultValue={quantity && quantity} placeholder="quantity" />
                     <small id="emailHelp" className="form-text text-danger">{errors.quantity && "invalid quantity"}</small>
                 </div>
 

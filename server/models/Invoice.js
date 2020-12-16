@@ -7,21 +7,38 @@ const invoiceSchema = new Schema({
         default: 'anonymous',
         required: true
     },
-    product: {
-        type: ObjectId,
-        ref: "Product"
-    },
-    quantity: {
-        type: Number,
+    product: [{
+        id: {
+            type: ObjectId,
+            ref: "Product"
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        quantity: {
+            type: String,
+            required: true
+        },
+        price: {
+            type: String,
+            required: true
+        },
+        totalPrice: {
+            type: String,
+            required: true
+        }
+    }],
+    totalPrice: {
+        type: String,
         required: true
     },
-    totalPrice: {
-        type: Number,
+    paidAmount: {
+        type: String,
         required: true
     },
     dueAmount: {
-        type: Number,
-        required: true
+        type: String,
     }
 })
 
