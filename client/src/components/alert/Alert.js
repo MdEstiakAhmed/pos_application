@@ -6,7 +6,7 @@ const Alert = (props) => {
     return (
         <div className={`alert ${alertType} alert-dismissible fade show my-2`} role="alert">
             <strong>{message}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>

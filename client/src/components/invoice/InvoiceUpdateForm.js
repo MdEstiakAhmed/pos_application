@@ -2,7 +2,6 @@ import React from 'react';
 
 const InvoiceUpdateForm = (props) => {
     const { value, register, errors, handleSubmit, onSubmit, loader } = props;
-    console.log(value)
     return (
         <div>
             <div className="card">

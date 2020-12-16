@@ -21,9 +21,7 @@ const Table = (props) => {
 
     const { globalFilter, pageIndex, pageSize } = state;
 
-    useEffect(() => {
-        console.log(selectedData);
-    }, [selectedData]);
+
 
     const handleAllCheckbox = () => {
         let temp = [];
@@ -65,8 +63,8 @@ const Table = (props) => {
             <table {...getTableProps()} className="table mt-2">
                 <thead className="thead-dark">
                     {
-                        headerGroups.map((headerGroup) => (
-                            <tr {...headerGroup.getHeaderGroupProps()}>
+                        headerGroups.map((headerGroup, index) => (
+                            <tr {...headerGroup.getHeaderGroupProps()} key={index}>
                                 {
                                     selectedData ?
                                     <th><input type="checkbox" id="allCheckBox" onClick={() => handleAllCheckbox()} /></th> :
@@ -95,10 +93,10 @@ const Table = (props) => {
                 </thead>
                 <tbody {...getTableBodyProps()}>
                     {
-                        page.map((row) => {
+                        page.map((row, index) => {
                             prepareRow(row)
                             return (
-                                <tr {...row.getRowProps()}>
+                                <tr {...row.getRowProps()} key={index}>
                                     {
                                         selectedData ?
                                         <td><input type="checkbox" className="singleCheckbox" value={row.cells[0].row.values._id} onClick={() => handleSingleCheckbox(row.cells[0].row.values._id)} id={row.cells[0].row.values._id} /></td> :

@@ -24,7 +24,6 @@ const ViewInvoice = () => {
         .then(res => res.json())
         .then(data => {
             if(data.status){
-                console.log(data.data)
                 setData(data.data);
             }
             else{

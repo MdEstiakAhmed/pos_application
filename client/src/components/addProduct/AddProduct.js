@@ -12,7 +12,6 @@ const AddProduct = () => {
     const history = useHistory();
     
     const onSubmit = data => {
-        console.log(data)
         setAlert({success: false, error: false, message: ''});
         setLoader(true);
         fetch('http://localhost:5000/product', {

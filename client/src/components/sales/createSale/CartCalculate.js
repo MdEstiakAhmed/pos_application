@@ -13,13 +13,13 @@ const CartCalculate = (props) => {
             <div className="card">
                 <div className="card-header text-center">Summery</div>
                 <div className="row px-2">
-                    <div  class="col-6">
+                    <div  className="col-6">
                         <strong>item</strong>
                     </div>
-                    <div  class="col-3 text-center">
+                    <div  className="col-3 text-center">
                         <strong>quantity</strong>
                     </div>
-                    <div class="col-3 text-right">
+                    <div className="col-3 text-right">
                         <strong>cost</strong>
                     </div>
                 </div>
@@ -28,13 +28,13 @@ const CartCalculate = (props) => {
                     cart.map(item => {
                         return(
                             <div className="row px-2" key={item._id}>
-                                <div  class="col-6">
+                                <div  className="col-6">
                                     {item.name}
                                 </div>
-                                <div  class="col-3 text-center">
+                                <div  className="col-3 text-center">
                                     {item.count}
                                 </div>
-                                <div class="col-3 text-right">
+                                <div className="col-3 text-right">
                                     {item.salesPrice}
                                 </div>
                             </div>

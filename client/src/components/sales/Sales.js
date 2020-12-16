@@ -97,11 +97,11 @@ const Sales = () => {
                     !switchCart ?
                     <div className="container">
                         <ProductList cart={cart} setCart={setCart}/>
-                        <div class="row justify-content-between">
-                            <div class="col-6">
+                        <div className="row justify-content-between">
+                            <div className="col-6">
                                 <CartItem cart={cart} setCart={setCart}/>
                             </div>
-                            <div class="col-4">
+                            <div className="col-4">
                                 <CartCalculate cart={cart} setTotalCost={setTotalCost} purchaseHandle={purchaseHandle}/>
                             </div>
                         </div>

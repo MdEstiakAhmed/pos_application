@@ -55,7 +55,7 @@ module.exports = {
             return {'status': false, 'message': error.message}
         }
     },
-    getOne: async(data) => {
+    getOneInvoice: async(data) => {
         try {
             let result = await findData(Invoice, data);
             return result;
@@ -74,7 +74,7 @@ module.exports = {
             return {'status': false, 'message': error.message}
         }
     },
-    updateOne: async(data) => {
+    updateOneInvoice: async(data) => {
         try {
             let result = await updateData(Invoice, data);
             return result;

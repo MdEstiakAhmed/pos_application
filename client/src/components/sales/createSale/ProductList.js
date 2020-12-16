@@ -44,16 +44,16 @@ const ProductList = (props) => {
 
     return (
         <>
-            <div class="dropdown mb-5">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div className="dropdown mb-5">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown button
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     {
                         product.length > 0 ?
                         (
                             product.map(item => {
-                                return <button class="dropdown-item" href="#" onClick={() => handleCart(item)}>{item.name}</button>
+                                return <button key={item._id} className="dropdown-item" href="#" onClick={() => handleCart(item)}>{item.name}</button>
                             })
                         ) :
                         <h6>loading...</h6>
