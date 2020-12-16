@@ -59,7 +59,7 @@ const Sales = () => {
             if(data.status){
                 setLoader(false);
                 setAlert({success: true, error: false, message: data.message});
-                history.push('/');
+                history.push(`/invoiceInfo/${data.data._id}`);
             }
             else{
                 setLoader(false);

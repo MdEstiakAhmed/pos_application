@@ -39,6 +39,10 @@ const ViewInvoice = () => {
         history.push(`/updateInvoice/${obj._id}`);
     }
 
+    const handleDetails = (id) => {
+        history.push(`/invoiceInfo/${id}`);
+    }
+
     return (
         <>
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -58,7 +62,7 @@ const ViewInvoice = () => {
                     }
                     {
                         data.length > 0 ?
-                        <Table column={InvoiceColumn} value={data} handleUpdate={handleUpdate} handleDelete={false} selectedData={false} setSelectedData={false}/> :
+                        <Table column={InvoiceColumn} value={data} handleUpdate={handleUpdate} handleDetails={handleDetails} handleDelete={false} selectedData={false} setSelectedData={false}/> :
                         <p>no data found</p>
                     }
                 </div>

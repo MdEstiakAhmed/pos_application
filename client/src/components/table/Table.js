@@ -4,7 +4,7 @@ import GlobalFiltering from './Filtering/GlobalFiltering';
 import './table.css';
 
 const Table = (props) => {
-    const { column, value, handleUpdate, handleDelete, selectedData, setSelectedData } = props;
+    const { column, value, handleUpdate, handleDetails, handleDelete, selectedData, setSelectedData } = props;
     const columns = useMemo(() => column, []);
     const data = useMemo(() => value, [value]);
 
@@ -116,6 +116,11 @@ const Table = (props) => {
                                     }
                                     <td>
                                         <button className="btn btn-primary btn-sm m-2" onClick={() => handleUpdate(row.cells[0].row.values)}>update</button>
+                                        {
+                                            handleDetails ?
+                                            <button className="btn btn-primary btn-sm m-2" onClick={() => handleDetails(row.cells[0].row.values._id)}>details</button> :
+                                            null
+                                        }
                                         {
                                             handleDelete ?
                                             <button className="btn btn-primary btn-sm m-2" onClick={() => handleDelete(row.cells[0].row.values._id)}>delete</button> :

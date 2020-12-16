@@ -51,16 +51,16 @@ module.exports = {
                         let findData = {
                             find: {'_id': id},
                         }
-                        const result = await getOne(findData);
-                        if(result.status){
-                            const totalQuantity = result.data.quantity;
+                        const getResult = await getOne(findData);
+                        if(getResult.status){
+                            const totalQuantity = getResult.data.quantity;
                             try {
                                 let obj = {
                                     find: {'_id': id},
                                     updateValue: {quantity: parseInt(totalQuantity) - parseInt(quantity)}
                                 }
                                 const updateResult = await updateOne(obj)
-                                return res.status(200).json(updateResult);
+                                return res.status(200).json(result);
                             } 
                             catch (error) {
                                 return res.status(412).json({'status': false, 'message': error.message});
