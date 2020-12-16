@@ -37,7 +37,7 @@ const ProductForm = (props) => {
                     <small id="emailHelp" className="form-text text-danger">{errors.quantity && "invalid quantity"}</small>
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label htmlFor="image[0]">product image</label>
                     <input type="text" className="form-control" name="image[0]" id="image[0]" ref={register} defaultValue="" placeholder="first image" />
                 </div>
@@ -45,7 +45,7 @@ const ProductForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="image[1]">product image</label>
                     <input type="text" className="form-control" name="image[1]" id="image[1]" ref={register} defaultValue="" placeholder="first image" />
-                </div>
+                </div> */}
 
                 {
                     loader ?

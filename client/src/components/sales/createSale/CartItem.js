@@ -13,6 +13,17 @@ const CartItem = (props) => {
         setCart([...newCart]);
     }
 
+    const handleSalesPrice = (id, newPrice) => {
+        if(newPrice > 0){
+            for(let i=0; i<cart.length; i++){
+                if(cart[i]._id === id){
+                    cart[i].salesPrice = newPrice;
+                }
+            }
+            setCart([...cart])
+        }
+    }
+
     return (
         <>
             <h4>cart:</h4>
@@ -27,7 +38,8 @@ const CartItem = (props) => {
                                         <div className="col-6">
                                             <p className="">{product.name}</p>
                                             <p className="">purchase price: {product.purchasePrice}</p>
-                                            <p className="">sale price: {product.salesPrice}</p>
+                                            <p className="">sale price: <input type="text" className="w-25" defaultValue={product.salesPrice} onChange={(e) => handleSalesPrice(product._id, e.target.value)}/></p>
+                                            
                                         </div>
                                         <div className="col-4 text-right">
                                             <ItemCount id={product._id} max={product.quantity} cart={cart} setCart={setCart}/>

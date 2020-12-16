@@ -90,7 +90,7 @@ const ViewProduct = () => {
                     }
                     {
                         data.length > 0 ?
-                        <Table column={ProductColumn} value={data} handleUpdate={handleUpdate} handleDelete={handleDelete} selectedData={selectedData} setSelectedData={setSelectedData}/> :
+                        <Table column={ProductColumn} value={data} handleUpdate={handleUpdate} handleDelete={handleDelete} selectedData={false} setSelectedData={setSelectedData}/> :
                         <p>no data found</p>
                     }
                 </div>

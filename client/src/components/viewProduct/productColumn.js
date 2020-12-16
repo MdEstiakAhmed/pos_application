@@ -19,8 +19,8 @@ export const ProductColumn = [
         header: 'Quantity',
         accessor: 'quantity',
     },
-    {
-        header: 'image',
-        accessor: 'image',
-    },
+    // {
+    //     header: 'image',
+    //     accessor: 'image',
+    // },
 ]
