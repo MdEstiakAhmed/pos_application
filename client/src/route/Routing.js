@@ -13,6 +13,7 @@ import ViewProduct from "../components/viewProduct/ViewProduct";
 import Sales from "../components/sales/Sales";
 import SalesRecord from "../components/salesRecord/SalesRecord";
 import Login from "../components/login/Login";
+import UpdateProduct from '../components/updateProduct/UpdateProduct';
 
 
 
@@ -38,6 +39,9 @@ const Routing = () => {
             </Route>
             <Route exact path="/addProduct">
                 <Dashboard children={<AddProduct/>}/>
+            </Route>
+            <Route exact path="/upDateProduct/:id">
+                <Dashboard children={<UpdateProduct/>}/>
             </Route>
             <Route exact path="/viewProduct">
                 <Dashboard children={<ViewProduct/>}/>

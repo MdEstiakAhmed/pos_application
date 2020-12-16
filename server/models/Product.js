@@ -15,15 +15,15 @@ const productSchema = new Schema({
         required: true
     }],
     purchasePrice: {
-        type: Number,
+        type: String,
         required: true
     },
     salesPrice: {
-        type: Number,
+        type: String,
         required: true
     },
     quantity: {
-        type: Number,
+        type: String,
         required: true
     }
 })
