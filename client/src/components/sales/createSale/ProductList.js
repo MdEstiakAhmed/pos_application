@@ -10,7 +10,7 @@ const ProductList = (props) => {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                // 'Authorization': "Bearer " + JSON.parse(localStorage.getItem('jwt'))
+                'Authorization': "Bearer " + JSON.parse(localStorage.getItem('jwt'))
             },
         })
         .then(res => res.json())

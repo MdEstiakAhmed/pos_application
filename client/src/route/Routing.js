@@ -14,6 +14,8 @@ import Sales from "../components/sales/Sales";
 import SalesRecord from "../components/salesRecord/SalesRecord";
 import Login from "../components/login/Login";
 import UpdateProduct from '../components/updateProduct/UpdateProduct';
+import ViewInvoice from '../components/invoice/ViewInvoice';
+import UpdateInvoice from '../components/invoice/UpdateInvoice';
 
 
 
@@ -50,7 +52,10 @@ const Routing = () => {
                 <Dashboard children={<Sales/>}/>
             </Route>
             <Route exact path="/saleRecord">
-                <Dashboard children={<SalesRecord/>}/>
+                <Dashboard children={<ViewInvoice/>}/>
+            </Route>
+            <Route exact path="/updateInvoice/:id">
+                <Dashboard children={<UpdateInvoice/>}/>
             </Route>
             <Route exact path="/">
                 <Dashboard children={<Home/>}/>

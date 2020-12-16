@@ -19,7 +19,7 @@ const UpdateProduct = () => {
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
-                // 'Authorization': "Bearer " + JSON.parse(localStorage.getItem('jwt'))
+                'Authorization': "Bearer " + JSON.parse(localStorage.getItem('jwt'))
             },
         })
         .then(res => res.json())
@@ -47,7 +47,8 @@ const UpdateProduct = () => {
             credentials: 'same-origin',
             headers: {
                 Accept: 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + JSON.parse(localStorage.getItem('jwt'))
             },
             redirect: 'follow',
             referrerPolicy: 'no-referrer',

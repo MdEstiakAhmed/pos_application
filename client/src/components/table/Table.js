@@ -67,7 +67,11 @@ const Table = (props) => {
                     {
                         headerGroups.map((headerGroup) => (
                             <tr {...headerGroup.getHeaderGroupProps()}>
-                                <th><input type="checkbox" id="allCheckBox" onClick={() => handleAllCheckbox()} /></th>
+                                {
+                                    selectedData ?
+                                    <th><input type="checkbox" id="allCheckBox" onClick={() => handleAllCheckbox()} /></th> :
+                                    null
+                                }
                                 {
                                     headerGroup.headers.map((column) => (
                                         <th {...column.getHeaderProps()}>
@@ -95,7 +99,12 @@ const Table = (props) => {
                             prepareRow(row)
                             return (
                                 <tr {...row.getRowProps()}>
-                                    <td><input type="checkbox" className="singleCheckbox" value={row.cells[0].row.values._id} onClick={() => handleSingleCheckbox(row.cells[0].row.values._id)} id={row.cells[0].row.values._id} /></td>
+                                    {
+                                        selectedData ?
+                                        <td><input type="checkbox" className="singleCheckbox" value={row.cells[0].row.values._id} onClick={() => handleSingleCheckbox(row.cells[0].row.values._id)} id={row.cells[0].row.values._id} /></td> :
+                                        null
+
+                                    }
                                     {
                                         row.cells.map((cell) => {
                                             return (
@@ -109,7 +118,11 @@ const Table = (props) => {
                                     }
                                     <td>
                                         <button className="btn btn-primary btn-sm m-2" onClick={() => handleUpdate(row.cells[0].row.values)}>update</button>
-                                        <button className="btn btn-primary btn-sm m-2" onClick={() => handleDelete(row.cells[0].row.values._id)}>delete</button>
+                                        {
+                                            handleDelete ?
+                                            <button className="btn btn-primary btn-sm m-2" onClick={() => handleDelete(row.cells[0].row.values._id)}>delete</button> :
+                                            null
+                                        }
                                     </td>
                                 </tr>
                             )

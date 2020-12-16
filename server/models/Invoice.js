@@ -1,5 +1,6 @@
 const { Schema, model} = require('mongoose')
-const {ObjectId} = mongoose.Schema.Types;
+const {ObjectId} = Schema.Types;
+const {insertData, findAllData, findData, updateData} = require('./Database')
 
 const invoiceSchema = new Schema({
     customerName: {
@@ -43,3 +44,43 @@ const invoiceSchema = new Schema({
 })
 
 const Invoice = model('Invoice', invoiceSchema)
+
+module.exports = {
+    getAll: async() => {
+        try {
+            let result = await findAllData(Invoice);
+            return result;
+        } 
+        catch (error) {
+            return {'status': false, 'message': error.message}
+        }
+    },
+    getOne: async(data) => {
+        try {
+            let result = await findData(Invoice, data);
+            return result;
+        } 
+        catch (error) {
+            return {'status': false, 'message': error.message}
+        }
+    },
+    insertOne: async(data) => {
+        let dataModel = new Invoice(data);
+        try {
+            let result = await insertData(dataModel);
+            return result;
+        } 
+        catch (error) {
+            return {'status': false, 'message': error.message}
+        }
+    },
+    updateOne: async(data) => {
+        try {
+            let result = await updateData(Invoice, data);
+            return result;
+        } 
+        catch (error) {
+            return {'status': false, 'message': error.message}
+        }
+    },
+}
