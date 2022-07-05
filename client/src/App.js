@@ -8,6 +8,7 @@ export const UserContext = createContext();
 
 function App() {
   const [state, dispatch] = useReducer(reducer,initialState);
+  console.log("test")
   return (
     <>
       <UserContext.Provider value={{state, dispatch}}>
