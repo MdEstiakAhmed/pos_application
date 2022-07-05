@@ -9,6 +9,7 @@ export const UserContext = createContext();
 function App() {
   const [state, dispatch] = useReducer(reducer,initialState);
   console.log("test")
+  console.log("test2")
   return (
     <>
       <UserContext.Provider value={{state, dispatch}}>
